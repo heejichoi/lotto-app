@@ -243,12 +243,35 @@ section {
     #lotto_num dt {
         background: #E4E4E4;
         color: var(--base-text-dark);
-        padding: 1rem 2rem
+        padding: 1rem 2rem;
     }
     #lotto_num dd {
         border-top: 1px solid #E4E4E4;
         border-bottom: 1px solid #E4E4E4;
-        letter-spacing: 5px
+        letter-spacing: 5px;
+    }
+
+    ul#lotto_num li{
+        display: flex;
+    }
+    ul#lotto_num li span{
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        box-sizing: border-box;
+    }
+    ul#lotto_num li > span:first-child{
+        background: #E4E4E4;
+        color: var(--base-text-dark);
+        padding: 0 1.250rem;
+        flex: 1;
+    }
+    ul#lotto_num li > span:last-child{
+        border-top: 1px solid #E4E4E4;
+        border-bottom: 1px solid #E4E4E4;
+        letter-spacing: 5px;
+        text-indent: 20%;
+        flex: 9;
     }
 
     #blind {
