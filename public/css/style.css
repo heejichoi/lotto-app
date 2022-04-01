@@ -24,6 +24,12 @@ a, a:link {
 .text-center {
     text-align: center;
 }
+.justify-center {
+    justify-content: center;
+}
+.column-direction {
+    flex-direction: column;
+}
 .my-1 {
     margin: 1rem 0
 }
@@ -164,6 +170,7 @@ section {
     }
     /* ------- mobile section : login page -------- */
     #loginForm li, #registerForm li {
+        display: flex;
         position: relative;
         margin: 0 0 1rem 0
     }
@@ -213,9 +220,10 @@ section {
         border-radius: 10px;
         height: 52px;
         width: 27%;
-        margin: 0 0 0 1%;        
+        margin: 0 0 0 5%;        
         color: var(--base-text-white);
-        background: var(--main-color1)
+        background: var(--main-color1);
+        box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
     }
     label[for=userPrivacy] {
         position: absolute;
@@ -243,37 +251,37 @@ section {
     #lotto_num dt {
         background: #E4E4E4;
         color: var(--base-text-dark);
-        padding: 1rem 2rem;
+        padding: 1rem 2rem
     }
     #lotto_num dd {
         border-top: 1px solid #E4E4E4;
         border-bottom: 1px solid #E4E4E4;
-        letter-spacing: 5px;
+        letter-spacing: 5px
     }
 
-    ul#lotto_num li{
+    ul#lotto_num li { /* 종속 선택자 */
         display: flex;
     }
     ul#lotto_num li span{
         display: block;
         height: 50px;
         line-height: 50px;
-        box-sizing: border-box;
+        box-sizing: border-box
     }
-    ul#lotto_num li > span:first-child{
+    ul#lotto_num li > span:first-child {
+        text-align: center;
         background: #E4E4E4;
         color: var(--base-text-dark);
         padding: 0 1.250rem;
-        flex: 1;
+        flex: 1
     }
-    ul#lotto_num li > span:last-child{
+    ul#lotto_num li > span:last-child {
         border-top: 1px solid #E4E4E4;
         border-bottom: 1px solid #E4E4E4;
         letter-spacing: 5px;
-        text-indent: 20%;
-        flex: 9;
+        text-indent: 10%;
+        flex: 9
     }
-
     #blind {
         height: 30px;
         color: var(--base-text-dark);
@@ -307,7 +315,7 @@ section {
         left: 5px
     }
     #blind.unlock::before {
-        left: calc(90% - 5px)
+        left: calc(100% - 25px)
     }
 
     /* ------- mobile section : customer page -------- */
@@ -335,5 +343,16 @@ section {
         gap:1rem;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 425px){
+    #registerForm li #clickSecurity { /* a : inline element */
+        margin: 0 0 0 10px;        
+    }
+}
+@media screen and (max-width: 320px){
+    #lotto_num dd {
+        letter-spacing: -1px;
     }
 }
